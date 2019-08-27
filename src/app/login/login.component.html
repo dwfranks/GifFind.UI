@@ -1,0 +1,23 @@
+<div class="gf-login-container">
+  <div class="gf-login-subcontainer">
+    <p-card header="Welcome to Giffind" styleClass="ui-card-shadow" [style]="{width: '270px'}">
+      <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()"> 
+        <div class="gf-login-card-container">
+          <div class="gf-padding-5">
+            <input formControlName="usernameField" class="gf-searchInput" placeholder="Username">
+          </div>
+          <div class="gf-padding-5">
+            <input formControlName="passwordField" class="gf-searchInput" placeholder="Password" type="password">
+          </div>
+          <div id="button-register">
+            <a routerLink="/register">Register</a>
+          </div>
+          <div class="gf-padding-5 gf-align-right">
+              <button pButton type="submit" label="Login"></button>
+          </div>
+        </div>
+      </form>
+    </p-card>
+    {{this.error}}
+  </div>
+</div>

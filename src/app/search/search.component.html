@@ -1,0 +1,12 @@
+<div class="gf-search-container">
+    <div class="gf-search">
+        <form [formGroup]="searchForm" (ngSubmit)="submit()">
+            <input type="search" placeholder="Enter keyword search" class="gf-searchInput" formControlName="searchField">
+        </form>
+      </div>
+</div>
+<div class="p-grid gf-image-container">
+  <div class="p-col" *ngFor="let gif of gifImages">
+    <app-image-view [image]="gif"></app-image-view>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<p-dialog [(visible)]="show" [modal]="true" [appendTo]="'body'">
+    <span><input pInputText [(ngModel)]="newCategory"/><em class="pi pi-plus category-add" style="font-size: 2.5em" (click)="onCategorySaveClick()"></em></span>
+</p-dialog>
+<span class="category" ngClass="{ 'ui-state-disabled': disabled }" disabled="true">
+    <p-dropdown [options]="categories" optionLabel="categoryName" [(ngModel)]="selectedCategory" [disabled]="disabled" 
+        (onChange)="handleCategoryChange()"></p-dropdown>
+    <em *ngIf="disabled" class="pi pi-plus category-add-disable" style="font-size: 2.5em"></em>
+    <em *ngIf="!disabled" class="pi pi-plus category-add" style="font-size: 2.5em" pTooltip="Add Category" (click)="onCategoryAddClick()"></em>
+</span>

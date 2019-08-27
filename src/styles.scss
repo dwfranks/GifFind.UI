@@ -1,1 +1,212 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import './styles/theme.scss';
+
+h1 a:hover {
+  cursor: pointer;
+}
+
+.gf-disable {
+  opacity: 0.5;
+  cursor: default !important;
+}
+
+.gf-image-container {
+  margin-top: 175px;
+}
+
+.gf-image {
+  width: 150px;
+  height: 150px;
+}
+
+.gf-search {
+  margin: 0 auto;
+}
+
+.gf-search:focus {
+  border-collapse: blue;
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+}
+
+.gf-search-container {
+  top: 72px;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+}
+
+.gf-image-view-container {
+  cursor: pointer;
+}
+
+.gf-login-container {
+  top: 150px;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+}
+
+.gf-login-subcontainer {
+  margin: auto;
+  width: 270px;
+}
+
+.gf-register-container {
+  margin-top: 150px;
+}
+
+.gf-login-card-container {
+  padding: 5px;
+}
+
+.gf-login-card-container>div {
+  height: 25px;
+  padding: 20px 0px;
+}
+
+.gf-login-card-container input {
+  width: 200px;
+}
+
+.gf-register-container p-card>div {
+  margin: auto;
+}
+
+.gf-register-input-container-1 {
+  height: 200px;
+}
+.gf-register-input-container-1>div {
+  padding: 20px 0px;
+}
+
+#button-register {
+  width: 100px;
+  float: left;
+}
+
+.gf-title-menu {
+  color: $header-color;
+  background: $header-primary-bg-color;
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+  padding-top: 5px;
+  top: 0px;
+}
+
+.gf-align-top {
+  text-align: start;
+}
+
+.gf-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+}
+
+.gf-padding-5 {
+  padding: 5px;
+}
+
+.gf-align-right {
+  text-align: right;
+}
+
+.gf-logo {
+  border-radius: 5%;
+  padding: 5px;
+}
+
+.button {
+  position: relative;
+  background-color: $button-primary-bg-color;
+  border: none;
+  color: $button-color;
+  text-align: center;
+  transition-duration: 300ms;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:after {
+  content: "";
+  background: $button-active-bg-color;
+  display: block;
+  position: absolute;
+  padding-top: 150%;
+  padding-left: 150%;
+  margin-left: 10%!important;
+  margin-top: -75%;
+  opacity: 0;
+  transition: 500ms;
+  transform: scale(2.5);
+  border-radius: 5%;
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transform: scale(0);
+  transition: 0s
+}
+
+%button-favorite-icon {
+  text-align: center;
+}
+
+.button-favorite-icon-selected {
+  @extend %button-favorite-icon;
+  color: red;
+}
+
+.button-favorite-icon-unselected {
+  @extend %button-favorite-icon;
+  color: grey;
+}
+
+.button-favorite-icon-selected:hover, .button-favorite-icon-unselected:hover {
+  color: pink;
+  cursor: pointer;
+}
+
+.category {
+  white-space: nowrap; 
+  display: inline-flex; 
+  align-items: center; 
+  min-height: 20px
+}
+.category-add {
+  color : $button-icon-color;
+}
+.category-add:hover {
+  color : $button-icon-color-hover;
+  cursor: pointer;
+}
+.category-add-disable {
+  cursor: default;
+}
+
+@import '../node_modules/primeng/resources/primeng.css';
+@import '../node_modules/primeng/resources/themes/nova-light/theme.css';
+@import '../node_modules/primeflex/primeflex.css';
+@import '~primeicons/primeicons.css';

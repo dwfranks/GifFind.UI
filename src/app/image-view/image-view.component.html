@@ -1,0 +1,20 @@
+<p-dialog [(visible)]="showFull" [modal]="true" [dismissableMask]="true" [blockScroll]="true" (onHide)="handleImageClose()" >
+    <img class="gf-image-full" src={{image?.original.url}}>
+    <p-footer>
+        <div class="p-grid p-align-center">
+            <div class="p-col-fixed" style="width: 50px" pTooltip="Favorite">
+                <em class="pi pi-heart" [ngClass]="(isFavorite) ? 'button-favorite-icon-selected': 'button-favorite-icon-unselected'" style="font-size: 2.5em" (click)="onFavoriteClick()"></em>
+            </div>
+            <div class="p-col">
+            </div>
+            <div class="p-col p-col-align-end">
+                <app-category-dropdown [categories]="categories" [disabled]="!isFavorite" 
+                    (selected)="handleSelectedCategory($event)" (addedCategory)="handleCategoryAdded($event)"></app-category-dropdown>
+            </div>
+        </div>
+    </p-footer>
+</p-dialog>
+<div class="gf-image-view-container">
+    <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+    <img style="width: 150px" src={{image?.previewGif.url}} pTooltip="{{image?.title}}" (load)="onLoad()" (click)="onClick()">
+</div>

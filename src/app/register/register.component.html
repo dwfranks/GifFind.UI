@@ -1,0 +1,26 @@
+<div class="gf-register-container">
+    <div class="p-grid p-justify-even">
+        <div class="p-col"></div>
+        <div class="p-col">
+            <p-card header="Register" styleClass="ui-card-shadow" [style]="{width: '300px', height: '105%'}">
+                <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+                    <div class="gf-register-input-container">
+                        <div class="gf-register-input-container-1">
+                            <div style="height: 25px"><input type="text" placeholder="Email" formControlName="emailField"></div>
+                            <div style="height: 25px"><input type="text" placeholder="Username" formControlName="usernameField"></div>
+                            <div style="height: 25px"><input type="password" placeholder="Password" formControlName="passwordField"></div>
+                            <div style="height: 25px"><input type="password" placeholder="Confirm Password" formControlName="confirmField"></div>
+                        </div>
+                        <div *ngIf="registerForm.errors?.noMatch && (registerForm.get('confirmField').touched || registerForm.get('confirmField').dirty)">
+                            <p-message severity="error" text="Password does not match"></p-message>
+                        </div>
+                        <div class="gf-align-right">
+                            <button pButton type="submit" label="Submit"></button>
+                        </div>
+                    </div>
+                </form>
+            </p-card>
+        </div>
+        <div class="p-col"></div>
+    </div>
+</div>

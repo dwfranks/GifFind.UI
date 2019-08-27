@@ -1,0 +1,10 @@
+<div class="gf-search-container">
+    <div class="gf-search">
+        <app-category-dropdown [categories]="categories" (selected)="handleCategoryChange($event)"></app-category-dropdown>
+      </div>
+</div>
+<div class="p-grid gf-image-container">
+  <div class="p-col" *ngFor="let gif of gifImages">
+    <app-image-view [image]="gif"></app-image-view>
+  </div>
+</div>

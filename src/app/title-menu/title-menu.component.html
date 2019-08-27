@@ -1,0 +1,17 @@
+<p-sidebar [(visible)]="showMenu" position="left"  appendTo="body">
+    <h1 style="font-weight:normal"><a routerLink="/search" (click)="handleClick()">Search</a></h1>
+    <h1 style="font-weight:normal"><a routerLink="/saved" (click)="handleClick()">Saved</a></h1>
+    <h1 *ngIf="currentUser" style="font-weight:normal"><a target="about:blank" (click)="handleLogout()">Logout</a></h1>
+</p-sidebar>
+<div class="p-grid gf-title-menu">
+    <div class="p-col-fixed" style="width:75px; height: 75px;">
+        <div class="button gf-logo" (click)="onLogoClick()">
+          <em class="pi pi-bars" style="font-size: 2.5em"></em>
+        </div>
+    </div>
+    <div class="p-col">
+    </div>
+    <div *ngIf="currentUser" class="p-col-fixed gf-center" style="width:200px">
+        Welcome {{currentUser.userName}}
+    </div>
+</div>
